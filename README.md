@@ -8,3 +8,14 @@
 # Step 2:
 # Should be a pull model for now, for every user having an unique id, and set of profolies under their name
 # (Temporary) For each user come in, the page will trigger the update call to all stocks his owning
+
+
+# Stock API
+# https://polygon.io/
+
+# UI Material-Design UI
+# https://material-ui.com/
+# React
+
+# Cloud Service
+# Oracle-OCI
