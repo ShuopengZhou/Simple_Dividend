@@ -11,12 +11,22 @@
 
 
 # Stock API
-# https://polygon.io/
+# https://iexcloud.io/console/tokens
 
 # UI Material-Design UI
 # https://material-ui.com/
+# https://www.creative-tim.com/product/material-dashboard-react?partner=104080
 # React
 
 # Cloud Service
+<<<<<<< Updated upstream
 - AWS EC2
 - MongoDB atlas
+=======
+# Mongo-DB Atlas
+# AWS
+
+
+# Tech Stack
+# React + Node.js + MongoDB
+>>>>>>> Stashed changes
