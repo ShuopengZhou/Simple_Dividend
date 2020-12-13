@@ -18,4 +18,5 @@
 # React
 
 # Cloud Service
-# Oracle-OCI
+- AWS EC2
+- MongoDB atlas
