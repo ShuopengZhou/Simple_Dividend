@@ -1,4 +1,5 @@
 import { createRequire } from 'module';
+import controller from './controller/controller.js';
 const require = createRequire(import.meta.url);
 let express = require('express'),
     mongoose = require('mongoose'),
@@ -20,7 +21,8 @@ app.enable('trust proxy');
 app.use(cors());
 // Middleware that transforms the raw string of req.body into json
 app.use(bodyParser.json());
-
+// Load API routes
+app = controller(app)
 
 app.listen(config.port, () => {
     logger('Server launched successfully.');
