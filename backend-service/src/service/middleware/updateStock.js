@@ -23,20 +23,13 @@ module.exports =  async(email, stockInformation) => {
         const data = res.data;
         let totalAmount = 0;
 
-        console.log("LENGTH" + data.length);
-
         data.forEach((entry) => {
             console.log("Entry");
             console.log(entry);
             totalAmount += entry.amount;
         })
         
-        console.log("Total amount" + totalAmount);
-        // const paymentDate = res.paymentDate;
-        console.log(quantity);
         const addedAnnualDividendAmount = totalAmount * quantity;
-
-        console.log("New annual dividend amount" + addedAnnualDividendAmount);
         // update annual dividend amount in the user box
         const filter = { email: email};
         const update = {
