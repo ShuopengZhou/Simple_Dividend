@@ -5,5 +5,6 @@ module.exports = {
         create: '/create',
         createPortfoliosPerStock: '/createPortfoliosPerStock'
     },
-    apiEndpoint: 'https://sandbox.iexapis.com/stable/time-series/advanced_dividends/'
+    apiEndpointPremium: 'https://sandbox.iexapis.com/stable/time-series/advanced_dividends/',
+    apiEndpointBasic: 'https://sandbox.iexapis.com/stable/stock/'
 }
