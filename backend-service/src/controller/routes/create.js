@@ -1,10 +1,10 @@
-import { createUser } from '../../service/create.js';
-import { logger } from '../../logger/logger.js'
-import { config } from '../../config/config.js'
-
-export default (app) => {
+const logger = require('../../logger/logger.js');
+const config = require('../../config/config.js');
+const createUser = require('../../service/create.js')
+module.exports = (app) => {
   app.get(config.routes.create, (req, res) => {
-      createUser();
+      // console.log("Email is" + req.query.email);
+      createUser(req.query.email);
       logger("User created.")
       return res.json({ status: 'success' }).status(200);
   });

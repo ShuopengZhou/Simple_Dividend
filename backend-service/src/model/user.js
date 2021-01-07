@@ -1,6 +1,5 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-let mongoose = require("mongoose");
+
+const mongoose = require("mongoose");
 
 let userSchema = new mongoose.Schema({
     email: String,
@@ -25,7 +24,6 @@ let userSchema = new mongoose.Schema({
 
 });
 
-let User = mongoose.model("User", userSchema)
+module.exports  = mongoose.model("User", userSchema)
 
-export { User };
 //module.exports = mongoose.model("User", userSchema);

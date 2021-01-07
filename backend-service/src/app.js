@@ -1,18 +1,20 @@
-import { createRequire } from 'module';
-import controller from './controller/controller.js';
-const require = createRequire(import.meta.url);
-let express = require('express'),
+// import { createRequire } from 'module';
+// import controller from './controller/controller.js';
+// const require = createRequire(import.meta.url);
+
+
+const express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     cors = require('cors');
-
-import { dbConnection } from './dao/connection.js'
-import { logger } from './logger/logger.js'
-import { config } from './config/config.js'
+const controller = require('./controller/controller.js');
+const DBConnection = require('./dao/connection.js');
+const logger = require('./logger/logger.js');
+const config = require('./config/config.js');
 
 let app = express()
 
-let db = new dbConnection();
+let db = new DBConnection();
 db.connect();
 
 // Show default IP from a reversed proxy (AWS)

@@ -1,26 +1,13 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-import { User } from '../model/user.js'
+const User = require('../model/user.js');
 
-function createUser(){
-    User.create({
-        email: 'xtjnj95@gmail.com',
+module.exports = async (email) => {
+    await User.create({
+        email: email,
         accountType: 'free',
         overview :{
-            annualDividend: 100,
+            annualDividend: 0,
             monthlyPayoutThisYear: [0,0,0,0,0,0,0,0,0,0,0,0]
         },
-        stockHolding:[{
-            symbol: 'AAPL',
-            amount: 100,
-            averageCost: 100,
-            currentDividendYield: 100,
-            payoutSchedule:[{
-                date: new Date(),
-                payoutAmount: 100
-            }]
-        }]
+        stockHolding:[]
     })
 }
-
-export { createUser };

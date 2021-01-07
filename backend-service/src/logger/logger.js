@@ -1,9 +1,7 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-import fs from 'fs'
-let sd = require('silly-datetime');
+const fs = require('fs');
+const sd = require('silly-datetime');
 
-function logger(str){
+module.exports = (str) => {
     let timestamp = sd.format(new Date(), 'YYYY-MM-DD HH:mm:ss');
 
     fs.appendFile('console.log', timestamp + '   --------   ' + str + '\n',  function(err) {
@@ -13,5 +11,3 @@ function logger(str){
         console.log("Timestamp: " + timestamp);
     }); 
 }
-
-export { logger };

@@ -5,7 +5,8 @@
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "mongoose": "^5.11.8",
-    "silly-datetime": "^0.1.2"
+    "silly-datetime": "^0.1.2",
+    "axios": "0.21.1"
   },
   "scripts": {
     "start": "node src/app.js"

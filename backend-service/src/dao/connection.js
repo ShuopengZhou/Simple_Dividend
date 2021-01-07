@@ -1,13 +1,13 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-import { config } from '../config/config.js'
-import { logger } from '../logger/logger.js'
+const config = require('../config/config.js');
+const logger = require('../logger/logger.js');
 
-export class dbConnection {
+
+
+module.exports = class DBConnection {
     connect() {
-        let db = mongoose.connect(config.dbUrl, {
+        const db = mongoose.connect(config.dbUrl, {
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true,

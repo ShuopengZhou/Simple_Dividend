@@ -1,9 +1,9 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-import create from './routes/create.js';
 
+const createUserRoute = require('./routes/create.js');
+const createStockRoute = require('./routes/stocks');
 
-export default (app) => {
-	create(app);
+module.exports =(app) => {
+	createUserRoute(app);
+	createStockRoute(app);
 	return app
 }
