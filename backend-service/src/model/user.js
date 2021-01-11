@@ -7,19 +7,20 @@ let userSchema = new mongoose.Schema({
         type:String, 
         default:"free"
     },
-    overview: {
-        annualDividend: Number,
-        monthlyPayoutThisYear: [Number]
-    },
     stockHolding:[{
         symbol: String,
         amount: Number,
+        purchasedDate: Date,
         averageCost: Number,
         currentDividendYield: Number,
         payoutSchedule:[{
-            date: Date,
-            payoutAmount: Number
-        }]
+            paymentDate: Date,
+            payoutAmount: Number,
+            declaredDate: Date,
+            exDate: Date,
+            recordDate: Date
+        }],
+        lastTimeUpdated: Date
     }]
 
 });
