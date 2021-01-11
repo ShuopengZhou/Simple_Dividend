@@ -9,7 +9,7 @@ let userSchema = new mongoose.Schema({
     },
     stockHolding:[{
         symbol: String,
-        amount: Number,
+        quantity: Number,
         purchasedDate: Date,
         averageCost: Number,
         currentDividendYield: Number,
