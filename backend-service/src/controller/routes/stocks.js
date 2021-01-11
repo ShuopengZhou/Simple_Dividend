@@ -4,6 +4,7 @@ const config = require('../../config/config.js');
 const createPortofoliosPerStock = require('../../service/portofolios');
 const stockInfoModule =  require('../../service/getStockInfo');
 const getAnnualDividend = stockInfoModule.getAnnualDividend;
+const getMonthlyDividend = stockInfoModule.getMonthlyDividend;
 
 module.exports = (app) => {
   app.post(config.routes.createPortfoliosPerStock, (req, res) => {
@@ -20,11 +21,18 @@ module.exports = (app) => {
       logger("Retrieve user" + email + "annual dividend information");
 
       let amount = await getAnnualDividend(email, year);
-
       return res.json({ amount: amount }).status(200);
-
   })
 
   // Get monthly payout amount
+  app.get(config.routes.getMonthlyDividend, async (req, res) => {
+      const year = req.query.year;
+      const month = req.query.month;
+      const email = req.query.email;
 
+      logger("Retrieve user" + email + "monthly dividend information for" + month);
+
+      let amount = await getMonthlyDividend(email, year, month);
+      return res.json({ amount: amount }).status(200);
+  })
 };
