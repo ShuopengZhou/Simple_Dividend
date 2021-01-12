@@ -5,6 +5,7 @@ const createPortofoliosPerStock = require('../../service/portofolios');
 const stockInfoModule =  require('../../service/getStockInfo');
 const getAnnualDividend = stockInfoModule.getAnnualDividend;
 const getMonthlyDividend = stockInfoModule.getMonthlyDividend;
+const getMonthlyPayee = stockInfoModule.getMonthlyPayee;
 
 module.exports = (app) => {
   app.post(config.routes.createPortfoliosPerStock, (req, res) => {
@@ -34,5 +35,20 @@ module.exports = (app) => {
 
       let amount = await getMonthlyDividend(email, year, month);
       return res.json({ amount: amount }).status(200);
+  })
+  // Get monthly paytout companies
+  app.get(config.routes.getMonthlyPayee, async (req, res) => {
+      const year = req.query.year;
+      const month = req.query.month;
+      const email = req.query.email;
+
+      logger("Retrieve user" + email + "monthly dividend payee information for" + month);
+      let payeeList = await getMonthlyPayee(email, year, month);
+      return res.json({ 
+        year: year,
+        month: month,
+        result: payeeList
+      }).status(200);
+  
   })
 };
