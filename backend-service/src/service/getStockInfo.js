@@ -79,10 +79,19 @@ const getMonthlyPayee = async function(email, year, month) {
     return res;
 }
 
+const getAllStockHoldings = async function( email ) {
+    const filter = { email: email};
+    let user = await User.findOne(filter).exec();
+
+    const stockInformation = user.stockHolding;
+    return stockInformation;
+}
+
 
 
 module.exports = {
     getAnnualDividend,
     getMonthlyDividend,
-    getMonthlyPayee
+    getMonthlyPayee,
+    getAllStockHoldings
 }

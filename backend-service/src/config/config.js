@@ -6,7 +6,8 @@ module.exports = {
         createPortfoliosPerStock: '/createPortfoliosPerStock',
         getAnnualDividend: '/getAnnualDividend',
         getMonthlyDividend: '/getMonthlyDividend',
-        getMonthlyPayee: '/getMonthlyPayee'
+        getMonthlyPayee: '/getMonthlyPayee',
+        getAllStockHoldings: '/getAllStockHoldings'
     },
     apiEndpointPremium: 'https://sandbox.iexapis.com/stable/time-series/advanced_dividends/',
     apiEndpointBasic: 'https://sandbox.iexapis.com/stable/stock/'

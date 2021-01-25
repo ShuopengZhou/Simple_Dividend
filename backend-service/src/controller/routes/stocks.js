@@ -51,4 +51,13 @@ module.exports = (app) => {
       }).status(200);
   
   })
+  // Get all stock holdings
+  app.get(config.routes.getAllStockHoldings, async(req, res) => {
+      const email = req.query.email;
+      logger("Retrieve user" + email + "all stock holding information");
+
+      let stockInfo = await stockInfoModule.getAllStockHoldings(email);
+      return res.json(stockInfo).status(200);
+
+  })
 };
